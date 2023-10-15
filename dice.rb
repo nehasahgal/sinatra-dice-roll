@@ -45,19 +45,17 @@ get("/dice/2/10") do
   second_roll = rand(1..10)
   sum_10 = first_roll + second_roll
 
-  outcome_10 = "You rolled a #{first_roll} and a #{second_roll} for a total of #{sum_10}."
+  @outcome_10 = "You rolled a #{first_roll} and a #{second_roll} for a total of #{sum_10}."
 
-  "<h1>2d10</h1>
-  <p>#{outcome_10}</p>"
+  erb(:two_ten, { :layout => :wrapper })
 end
 
 get("/dice/1/20") do
   roll_20 = rand(1..20)
 
-  outcome_20 = "You rolled a twenty-sided die with result #{roll_20}."
+  @outcome_20 = "You rolled a twenty-sided die with result #{roll_20}."
 
-  "<h2>1d20</h2>
-  <p>#{outcome_20}</p>"
+  erb(:one_twenty, { :layout => :wrapper })
 end
 
 get("/dice/5/4") do
@@ -69,8 +67,7 @@ get("/dice/5/4") do
 
   sum_5 = roll_1_of_5 + roll_2_of_5 + roll_3_of_5 + roll_4_of_5 + roll_5_of_5
 
-  outcome_5 = "You rolled a #{roll_1_of_5}, a #{roll_2_of_5}, a #{roll_3_of_5}, a #{roll_4_of_5}, and a #{roll_5_of_5}, for a total of #{sum_5}."
+  @outcome_5 = "You rolled a #{roll_1_of_5}, a #{roll_2_of_5}, a #{roll_3_of_5}, a #{roll_4_of_5}, and a #{roll_5_of_5}, for a total of #{sum_5}."
 
-  "<h1>4d5</h1>
-  <p>#{outcome_5}</p>"
+  erb(:five_four, { :layout => :wrapper })
 end
