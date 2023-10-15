@@ -1,0 +1,4 @@
+# /Dice.rb
+
+require "Sinatra"
+
